@@ -1,3 +1,8 @@
+/*
+ * Krasso, R., (2021). CIS 530 Server Side Development. Bellevue University, all
+rights reserved. 
+ */
+
 package com.bookclub;
 
 import org.springframework.boot.SpringApplication;
