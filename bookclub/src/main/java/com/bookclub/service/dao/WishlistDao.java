@@ -6,6 +6,6 @@ package com.bookclub.service.dao;
 
 import com.bookclub.model.WishlistItem;
 
-public interface WishlistDao extends com.bookclub.service.GenericDao<WishlistItem, String>{
+public interface WishlistDao extends com.bookclub.service.GenericCrudDao<WishlistItem, String>{
 
 }
