@@ -6,27 +6,33 @@ rights reserved.
 
 package com.bookclub.model;
 
-import java.util.List;
 
 public class Book {
 	
 	private String isbn;
 	private String title;
 	private String description;
+	private String infoUrl;
 	private int numOfPages;
-	private List<String> authors;
+
 	
 	public Book() {
 		super();
 	}
 	
-	public Book(String isbn, String title, String description, int numOfPages, List<String> authors) {	
-		this.isbn = isbn;
-		this.title = title;
-		this.description = description;
-		this.numOfPages = numOfPages;
-		this.authors = authors;	
-	}
+    public Book(String isbn, String title, String description, String infoUrl, int numOfPages) {
+        this.isbn = isbn;
+        this.title = title;
+        this.description = description;
+        this.infoUrl = infoUrl;
+        this.numOfPages = numOfPages;
+    }
+    
+    public Book(String isbn, String title, String infoUrl) {
+        this.isbn = isbn;
+        this.title = title;
+        this.infoUrl = infoUrl;
+    }
 	
 	public String getIsbn() {
 		return isbn;
@@ -43,10 +49,10 @@ public class Book {
 		return numOfPages;
 	}
 	
-	public List<String> getAuthors() {
-		return authors;
-	}
-	
+    public String getInfoUrl() {
+        return infoUrl;
+    }
+
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
@@ -63,17 +69,18 @@ public class Book {
 		this.numOfPages = numOfPages;
 	}
 	
-	public void setAuthors(List<String> authors) {
-		this.authors = authors;
-	}
+    public void setInfoUrl(String infoUrl) {
+        this.infoUrl = infoUrl;
+    }
 	
+
     /**
      *Overridden toString() method. Gives book description when called.
      */
     @Override
     public String toString(){
     	//System.out.printf("Book{isbn=" + this.isbn + ", title=" + this.title + ", description=" + this.description + ", numOfPages=" + this.numOfPages + ", authors=" + this.authors);
-    	String book = "Book{isbn=" + this.isbn + ", title=" + this.title + ", description=" + this.description + ", numOfPages=" + this.numOfPages + ", authors=" + this.authors + "}";
+    	String book = "Book{isbn=" + this.isbn + ", title=" + this.title + ", description=" + this.description + ", numOfPages=" + this.numOfPages + ", infoUrl=" + this.infoUrl;
     	return book;
     }
 

@@ -26,14 +26,21 @@ https://getbootstrap.com/docs/4.0/components/card/
      <div class="card-body">
         <h4 class="card-title" th:text="${book.getTitle()}"></h4>
 
-            <p class="card-text">
-			     <strong>Pages:</strong> <span th:text="${book.getNumOfPages()}"></span>
-                <strong>Description:</strong> <span th:text="${book.getDescription()}"></span>
-            </p>
-            <strong>Authors:</strong>
-             <ul th:each="author : ${book.getAuthors()}">
-                 <li th:text="${author}"></li>
-             </ul>
+            <div class="card-subtitle text-muted">
+                Pages: <span th:text="${book.getNumOfPages()}"></span>
+            </div>
+
+            <br />
+
+            <div class="card-text">
+                <p>
+                    <strong>Description:</strong> <br /><span th:text="${book.getDescription()}"></span>
+                </p>
+                <strong>Web Link:</strong>
+                <p>
+                    <a href="#" target="_blank" th:href="${book.getInfoUrl()}" th:text="${book.getInfoUrl()}"></a>
+                </p>
+            </div>
     </div>
 </div>
 
