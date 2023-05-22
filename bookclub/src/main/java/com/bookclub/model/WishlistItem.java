@@ -11,6 +11,8 @@ import org.springframework.data.annotation.Id;
 
 public class WishlistItem {
 	
+	private String username;
+	
 	@NotNull
 	@NotEmpty(message = "ISBN is a required field")
 	private String isbn;
@@ -42,6 +44,10 @@ public class WishlistItem {
    public String getId() {
 	   return id;
    }
+   
+   public String getUsername() {
+       return username;
+   }
     
     public void setIsbn(String isbn) {
         this.isbn = isbn;
@@ -50,13 +56,17 @@ public class WishlistItem {
     public void setTitle(String title) {
         this.title = title;
     }
+    
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     /**
      *Overridden toString() method. Gives wishlist item when called.
      */
     @Override
     public String toString(){
-    	String item = "WishlistItem isbn=" + this.isbn + ", title=" + this.title + ", id=" + this.id;
+    	String item = "WishlistItem isbn=" + this.isbn + ", title=" + this.title + ", id=" + this.id + ", username=" + this.username;
     	return item;
     }
 }
